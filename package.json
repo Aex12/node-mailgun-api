@@ -1,0 +1,32 @@
+{
+  "name": "mailgun-api",
+  "version": "0.0.1",
+  "description": "Basic API Bindings to Mailgun API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aex12/node-mailgun-api.git"
+  },
+  "keywords": [
+    "mailgun",
+    "api",
+    "node"
+  ],
+  "author": "Alex Caston (Aex12)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aex12/node-mailgun-api/issues"
+  },
+  "homepage": "https://github.com/Aex12/node-mailgun-api#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
