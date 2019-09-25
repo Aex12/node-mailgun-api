@@ -23,8 +23,12 @@ class MailgunAPI {
 		return this;
 	}
 
-	sendMessage (options) {
-		return this.api.post('/messages', options);
+	sendMessage (data = {}) {
+		return this.api({
+			method: 'POST',
+			url: '/messages',
+			data,
+		});
 	}
 }
 
