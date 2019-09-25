@@ -14,8 +14,10 @@ class MailgunAPI {
 
 		this.api = axios.create({
 			baseURL: `https://${apiDomain}/v3/${domain}/`,
-			username: 'api',
-			password: apiKey,
+			auth: {
+				username: 'api',
+				password: apiKey,
+			},
 		});
 
 		return this;
