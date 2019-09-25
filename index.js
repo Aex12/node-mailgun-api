@@ -1,4 +1,5 @@
 const axios = require('axios');
+const querystring = require('querystring');
 
 class MailgunAPI {
 	constructor ({ apiKey, domain, region }) {
@@ -23,11 +24,11 @@ class MailgunAPI {
 		return this;
 	}
 
-	sendMessage (data = {}) {
+	sendMessage (params = {}) {
 		return this.api({
 			method: 'POST',
 			url: '/messages',
-			data,
+			data: querystring.stringify(params),
 		});
 	}
 }
