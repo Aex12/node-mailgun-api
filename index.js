@@ -1,9 +1,19 @@
 const axios = require('axios');
 
 class MailgunAPI {
-	constructor ({ apiKey, domain }) {
+	constructor ({ apiKey, domain, region }) {
+		if (typeof apiKey !== 'string') throw new TypeError('apiKey must be string');
+		if (typeof domain !== 'string') throw new TypeError('domain must be string');
+
+		let apiDomain;
+		if (region.toUpperCase() === 'EU') {
+			apiDomain = 'api.eu.mailgun.net';
+		} else {
+			apiDomain = 'api.mailgun.net';
+		}
+
 		this.api = axios.create({
-			baseURL: `https://api.mailgun.net/v3/${domain}/`,
+			baseURL: `https://${apiDomain}/v3/${domain}/`,
 			username: 'api',
 			password: apiKey,
 		});
